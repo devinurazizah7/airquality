@@ -6,7 +6,16 @@ from datetime import datetime, timedelta
 import time
 import threading
 from aqi_monitor import TelegramNotifier, AQIMonitor  # Make sure this module exists
-
+# Import dengan penanganan error
+try:
+    import plotly.graph_objects as go
+    import plotly.express as px
+except ImportError:
+    import subprocess
+    import sys
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly==5.18.0"])
+    import plotly.graph_objects as go
+    import plotly.express as px
 # Page config
 st.set_page_config(
     page_title="AQI Monitor Dashboard",
