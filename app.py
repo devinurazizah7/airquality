@@ -29,7 +29,7 @@ def init_monitor():
         api_key = st.secrets["7754603821:AAEArAmBjCm8yI5vdsVkroY1g-DqOE5Bcjo"]
         
         notifier = TelegramNotifier(haidevi123_bot, AirQuality)
-        monitor = AQIMonitor(notifier, 76dd77dc53370d8668d1da5a8636b833687674a4a3f749a613dea9fbc5f9764  )
+        monitor = AQIMonitor(notifier, "76dd77dc53370d8668d1da5a8636b833687674a4a3f749a613dea9fbc5f9764" )
         
         return monitor, notifier
     except Exception as e:
